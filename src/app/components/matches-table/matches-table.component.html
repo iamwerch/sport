@@ -1,0 +1,30 @@
+<div class="col-lg-6">
+    <div class="widget-next-match">
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Team one</th>
+                    <th>Team two</th>
+                    <th>Score one</th>
+                    <th>Score two</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let match of matches">
+                    <td>{{match._id}}</td>
+                    <td><strong class="text-white">{{match.teamOne}}</strong></td>
+                    <td><strong class="text-white">{{match.teamTwo}}</strong></td>
+                    <td>{{match.scoreOne}}</td>
+                    <td>{{match.scoreTwo}}</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm me-1" (click)="goToEdit(match._id)">Edit</button>
+                        <button class="btn btn-primary btn-sm me-1" (click)="goToDisplay(match._id)">Display</button>
+                        <button class="btn btn-danger btn-sm"(click)="deleteMatch(match._id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

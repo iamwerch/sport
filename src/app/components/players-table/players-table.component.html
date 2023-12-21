@@ -1,0 +1,28 @@
+<div class="col-lg-6">
+    <div class="widget-next-match">
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Position</th>
+                    <th *ngIf="isDisplayed">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let player of players">
+                    <td>{{player._id}}</td>
+                    <td><strong class="text-white">{{player.playerName}}</strong></td>
+                    <td>{{player.age}}</td>
+                    <td>{{player.position}}</td>
+                    <td *ngIf="isDisplayed">
+                        <button class="btn btn-primary btn-sm me-1" (click)="goToEdit(player._id)">Edit</button>
+                        <button class="btn btn-primary btn-sm me-1" (click)="gotodisplay(player._id)">Display</button>
+                        <button class="btn btn-danger btn-sm"(click)="deletePlayer(player._id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
